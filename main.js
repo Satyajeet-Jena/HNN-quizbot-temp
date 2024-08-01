@@ -3,7 +3,7 @@ const options   = ['A) 2-3 servings\nB) 4-5 servings\nC) 6-7 servings\nD) 8-10 s
 const answers   = ['Answer: B) 4-5 servings\n', 'Answer: C) Having a family history of diabetes\n', 'Answer: C) To filter waste products from the blood\n', 'Answer: C) Running\n', 'Answer: B) Salmonella\n', 'Answer: D) All of the above\n', 'Answer: D) Smoking\n', 'Answer: B) 7-9 hours\n', 'Answer: D) All of the above\n', 'Answer: D) All of the above\n', 'Answer: B) Ischemic stroke\n', 'Answer: D) All of the above\n', 'Answer: B) Eating a diet high in salt and sugar\n', 'Answer: C) To fight infections and diseases\n', 'Answer: D) All of the above\n', 'Answer: B) Having a family history of breast cancer\n', 'Answer: A) Every 6 months\n', 'Answer: D) All of the above\n', 'Answer: B) Having a family history of colon cancer\n', 'Answer: B) To regulate metabolism and energy production\n', 'Answer: D) All of the above\n', 'Answer: A) Being overweight or obese\n', 'Answer: B) 5-7 days\n', 'Answer: D) All of the above\n', 'Answer: C) Being overweight or obese\n', 'Answer: B) Every year\n', 'Answer: D) All of the above\n', 'Answer: D) All of the above\n', 'Answer: C) To filter out pathogens and toxins\n', 'Answer: D) All of the above\n', 'Answer: D) Eating a diet high in sodium\n', 'Answer: A) Every 5 years\n', 'Answer: D) All of the above\n', 'Answer: C) High blood pressure\n', 'Answer: B) Every 3-5 years\n', 'Answer: D) All of the above\n', 'Answer: D) All of the above\n', 'Answer: A) To filter waste products from the blood\n', 'Answer: D) All of the above\n', 'Answer: D) All of the above\n', 'Answer: B) Every 3-5 years\n', 'Answer: D) All of the above\n', 'Answer: D) All of the above\n', 'Answer: B) Every year\n', 'Answer: D) All of the above\n', 'Answer: D) All of the above\n', 'Answer: B) To produce hormones that regulate metabolism\n', 'Answer: D) All of the above\n', 'Answer: B) Having a family history of type 1 diabetes\n', 'Answer: D) Only if you have fair skin or a family history of skin cancer\n'];
 // 10th character is option A or B or C or D
 
-const msgerForm = get(".msger-inputarea");
+let   msgerForm = document.querySelector(".msger-inputarea");
 const msgerInput = get(".msger-input");
 const msgerChat = get(".msger-chat");
 const BOT_IMG = "bot.png";
@@ -16,10 +16,11 @@ let i = 0;
 msgerForm.addEventListener("submit", event => {
   event.preventDefault();
   const msgText = msgerInput.value;
+  console.log(msgText);
   if (!msgText) return;
   msgerInput.value = "";
   addChat(PERSON_NAME, PERSON_IMG, "right", msgText);
-  if (msgText.toUpperCase() == answers[i].charAt(10)) {
+  if (msgText.toUpperCase() == answers[i].charAt(8)) {
     let correct_msg = "Correct! 😄 \n The right " + answers[i];
     addChat(BOT_NAME, BOT_IMG, "left", correct_msg);
   }else {
@@ -47,8 +48,8 @@ function addChat(name, img, side, text) {
   msgerChat.insertAdjacentHTML("beforeend", msgHTML);
   msgerChat.scrollTop += 500;
 }
-function get(selector, root = document) {
-  return root.querySelector(selector);
+function get(selector) {
+  return document.querySelector(selector);
 }
 function formatDate(date) {
   const h = "0" + date.getHours();
