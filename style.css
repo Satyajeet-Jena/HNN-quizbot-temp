@@ -4,6 +4,10 @@
   --msger-bg: #fff;
   --left-msg-bg: linear-gradient(to right, #f895b9, #f44183);
   --right-msg-bg: #ececec;
+
+  --correct-msg-bg: linear-gradient(to right, #33f833, #77fa77);
+  --incorrect-msg-bg: linear-gradient(to right, #f83333, #fa7777);
+
 }
 html {
   box-sizing: border-box;
@@ -93,6 +97,18 @@ body {
   padding: 15px;
   border-radius: 15px;
   background: var(--left-msg-bg);
+}
+.msg-bubble-correct {
+  max-width: 350px;
+  padding: 15px;
+  border-radius: 15px;
+  background: var(--correct-msg-bg);
+}
+.msg-bubble-incorrect {
+  max-width: 350px;
+  padding: 15px;
+  border-radius: 15px;
+  background: var(--incorrect-msg-bg);
 }
 .msg-info {
   display: flex;
