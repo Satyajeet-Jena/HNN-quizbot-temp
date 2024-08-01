@@ -6,8 +6,8 @@ const answers   = ['Answer: B) 4-5 servings<br>', 'Answer: C) Having a family hi
 let   msgerForm = document.querySelector(".msger-inputarea");
 const msgerInput = get(".msger-input");
 const msgerChat = get(".msger-chat");
-const BOT_IMG = "https://github.com/Satyajeet-Jena/HNN-quizbot-temp/raw/main/bot.png";
-const PERSON_IMG = "https://github.com/Satyajeet-Jena/HNN-quizbot-temp/raw/main/user.png";
+const BOT_IMG = "./bot.png";
+const PERSON_IMG = "./user.png";
 const BOT_NAME = "HNN Quizbot";
 const PERSON_NAME = "(You)";
 
